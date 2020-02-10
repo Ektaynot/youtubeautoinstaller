@@ -1,0 +1,11 @@
+import os
+print("Welcome To The AutoVideoİnstaller.")
+link=input("Please Paste Your Link:")
+os.system("youtube-dl -F '"+link+"'")
+vidnumber=input("Please Write The Number For Video Input:")
+audionumber=input("Please Write The Number For Audio Input:")
+name=input("What Is Your Videos Name:")
+os.system("youtube-dl -o 'video.webm' -f "+vidnumber+" '"+link+"'")
+os.system("youtube-dl -o 'audio.m4a' -f "+audionumber+" '"+link+"'")
+os.system("ffmpeg -i video.webm -i audio.m4a -c copy "+name+".mkv")
+os.system("rm video.webm video.m4a")
